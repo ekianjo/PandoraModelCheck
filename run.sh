@@ -13,10 +13,10 @@ processor=$(cat /proc/cpuinfo | sed -n 1p | awk '{print $3, $4, $5, $6, $7}')
 
 # get the max CPU syspeed to confirm whether it's a old OMAP or a 1Ghz OMAP.
 var2=$(cat /proc/pandora/sys_mhz_max)
-if [ "$var2" = "332" ]; then
-	message2="It has a 600Mhz OMAP processor ($processor)."
+if [ $var2 -gt 390 ]; then
+	message2="It has a 1Ghz processor ($processor)."
 else
-	message2="It has a 1Ghz OMAP processor ($processor)."
+	message2="It has a 600Mhz processor ($processor)."
 fi
 
 # get the total RAM size. 
