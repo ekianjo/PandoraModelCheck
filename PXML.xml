@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PXML xmlns="http://openpandora.org/namespaces/PXML">
+<package id="pandoramodelcheck">
+  <version major="1" minor="1" release="0" build="1" type="Release"/>
+  <author name="Ekianjo" website="http://www.pandoralive.info"/>
+  <titles>
+     <title lang="en_US">Pandora Model Check</title>
+  </titles>
+  <descriptions>
+  <description lang="en_US">A simple tool that displays basic information about your Pandora model and firmware right when you launch it. Practical if you are unsure what Pandora model you just received or just bought from someone else!  
+
+23 April 2012: Quick bug correction on RAM SIZE detection.
+</description>
+  </descriptions>
+  <icon src="icon.png"/>
+  </package>
+
+  <application id="pandoramodelcheck">
+    <exec command="run.sh"/>
+    <version major="1" minor="1" release="0" build="1"/>
+    <author name="Ekianjo" website="http://www.pandoralive.info"/>
+    <titles>
+      <title lang="en_US">Pandora Model Check</title>
+    </titles>
+    <title lang="en_US">Pandora Model Check</title>
+    <descriptions>
+      <description lang="en_US">A simple tool that displays basic information about your Pandora model and firmware right when you launch it. Practical if you are unsure what Pandora model you just received or just bought from someone else!  
+
+23 April 2012: Quick bug correction on RAM SIZE detection.
+</description>
+    </descriptions>
+    <description lang="en_US">A simple tool that displays basic information about your Pandora model and firmware right when you launch it. Practical if you are unsure what Pandora model you just received or just bought from someone else!  
+
+23 April 2012: Quick bug correction on RAM SIZE detection.
+</description>
+    <icon src="icon.png"/>
+    <licenses>
+      <license name="Open Source GNU General Public License version 3.0 (GPLv3)" url="http://sourceforge.net/directory/license:osi-approved-open-source/gnu-general-public-license-version-3.0-gplv3/" sourcecodeurl="#"/>
+    </licenses>
+    <previewpics>
+
+      <pic src="01.png"/>
+      
+      
+    </previewpics>
+    <info name="Pandora Model Check Readme" type="text/html" src="/mnt/utmp/pandoramodelcheck/README.txt"/>
+    <categories>
+      <category name="System">
+      </category>
+    </categories>
+  </application>
+</PXML>
