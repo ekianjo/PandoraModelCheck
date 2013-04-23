@@ -16,10 +16,10 @@ fi
 var3=$(grep MemTotal /proc/meminfo | awk '{print $2}')
 ramsize=$((var3/1024))
 
-if [ $ramsize -lt 500 ]; then
-	message="Your Pandora is an Original CC Model, equipped with 256Mb of RAM."
-else
+if [ $ramsize -gt 256 ]; then
 	message="Your Pandora is a Rebirth Edition, equipped with 512Mb of RAM."
+else
+	message="Your Pandora is an Original CC Model, equipped with 256Mb of RAM."
 fi
 
 # Displays the info with a super simple Zenity line.
