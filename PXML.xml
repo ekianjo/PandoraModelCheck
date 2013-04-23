@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PXML xmlns="http://openpandora.org/namespaces/PXML">
 <package id="pandoramodelcheck">
-  <version major="1" minor="1" release="0" build="1" type="Release"/>
+  <version major="1" minor="2" release="0" build="1" type="Release"/>
   <author name="Ekianjo" website="http://www.pandoralive.info"/>
   <titles>
      <title lang="en_US">Pandora Model Check</title>
@@ -9,6 +9,7 @@
   <descriptions>
   <description lang="en_US">A simple tool that displays basic information about your Pandora model and firmware right when you launch it. Practical if you are unsure what Pandora model you just received or just bought from someone else!  
 
+23 April 2012 #2: Added additional info display (ARM processor type and Linux kernel version).
 23 April 2012: Quick bug correction on RAM SIZE detection.
 </description>
   </descriptions>
@@ -17,7 +18,7 @@
 
   <application id="pandoramodelcheck">
     <exec command="run.sh"/>
-    <version major="1" minor="1" release="0" build="1"/>
+    <version major="1" minor="2" release="0" build="1"/>
     <author name="Ekianjo" website="http://www.pandoralive.info"/>
     <titles>
       <title lang="en_US">Pandora Model Check</title>
@@ -26,11 +27,13 @@
     <descriptions>
       <description lang="en_US">A simple tool that displays basic information about your Pandora model and firmware right when you launch it. Practical if you are unsure what Pandora model you just received or just bought from someone else!  
 
+23 April 2012 #2: Added additional info display (ARM processor type and Linux kernel version).
 23 April 2012: Quick bug correction on RAM SIZE detection.
 </description>
     </descriptions>
     <description lang="en_US">A simple tool that displays basic information about your Pandora model and firmware right when you launch it. Practical if you are unsure what Pandora model you just received or just bought from someone else!  
 
+23 April 2012 #2: Added additional info display (ARM processor type and Linux kernel version).
 23 April 2012: Quick bug correction on RAM SIZE detection.
 </description>
     <icon src="icon.png"/>

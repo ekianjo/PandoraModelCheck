@@ -2,14 +2,21 @@
 
 # get the firmware information
 var=$(cat /etc/op-version | sed -n 4p)
-var0="The latest firmware reflashed on your Pandora is $var."
+
+# get linux version
+linuxversion=$(cat /proc/version | awk '{print $3}')
+
+var0="The latest firmware reflashed on your Pandora is $var (running Linux $linuxversion)."
+
+# get processor model info
+processor=$(cat /proc/cpuinfo | sed -n 1p | awk '{print $3, $4, $5, $6, $7}')
 
 # get the max CPU syspeed to confirm whether it's a old OMAP or a 1Ghz OMAP.
 var2=$(cat /proc/pandora/sys_mhz_max)
 if [ "$var2" = "332" ]; then
-	message2="It has a 600Mhz OMAP processor."
+	message2="It has a 600Mhz OMAP processor ($processor)."
 else
-	message2="It has a 1Ghz OMAP processor."
+	message2="It has a 1Ghz OMAP processor ($processor)."
 fi
 
 # get the total RAM size. 
