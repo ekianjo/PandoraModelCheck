@@ -2,7 +2,7 @@
 
 # get the firmware information
 var=$(cat /etc/op-version | sed -n 4p)
-var0="Your current firmware is $var."
+var0="The latest firmware reflashed on your Pandora is $var."
 
 # get the max CPU syspeed to confirm whether it's a old OMAP or a 1Ghz OMAP.
 var2=$(cat /proc/pandora/sys_mhz_max)
