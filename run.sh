@@ -6,6 +6,12 @@ var=$(cat /etc/op-version | sed -n 4p)
 # get linux version
 linuxversion=$(cat /proc/version | awk '{print $3}')
 
+linuxkernel=$(cat uname -r | awk '{print $2}')
+
+defaultlang=$(set | egrep '^(LANG|LC_)' | awk '{print $1}')
+
+usershellname=&(ps -p $$ | tail -1 | awk '{ print $4 }')
+
 var0="The latest firmware reflashed on your Pandora is $var (running Linux $linuxversion)."
 
 # get processor model info
@@ -23,11 +29,21 @@ fi
 var3=$(grep MemTotal /proc/meminfo | awk '{print $2}')
 ramsize=$((var3/1024))
 
-if [ $ramsize -gt 256 ]; then
-	message="Your Pandora is a Rebirth Edition, equipped with 512Mb of RAM."
+if [ $ramsize -gt 256 ] && [ $var2 -gt 390 ]; then
+	model=( "1Ghz Model (2012)" )
 else
-	message="Your Pandora is an Original CC Model, equipped with 256Mb of RAM."
+if [ $ramsize -gt 256 ] && [ $var2 -lt 390 ]; then
+	model=( "Rebirth Model (2011)" )
+else
+if [ $ramsize -lt 256 ] && [ $var2 -lt 390 ]; then
+	model=( "CC Model (2008)" )
 fi
+fi
+fi	
+
+
 
 # Displays the info with a super simple Zenity line.
-zenity --info --text "$(echo $message $message2 $var0)" --title "Pandora Model Check"
+#zenity --info --text "$(echo $message $message2 $var0)" --title "Pandora Model Check"
+
+./yad --width=400 --height=300 --title "Pandora Model Check" --list --column="Component" --column="Value" "Firmware" "$var" "Linux Version" "$linuxversion" "Linux Kernel" "$linuxkernel" "System Language" "$defaultlang" "Processor" "$processor" "RAM Size" "$var3" "Pandora Model" "${model[@]}" "User Name" "$usershellname"
